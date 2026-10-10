@@ -1,21 +1,17 @@
 
 import obd
 
-# Use a specific adapter port, e.g. COM3.
-# Change COM3 to your adapter's actual port.
-connection = obd.OBD(portstr="COM3", fast=False, timeout=2)
+connection = obd.OBD(
+    portstr="COM4",  # Replace with your actual port
+    timeout=1,
+    fast=False,
+    check_voltage=False
+)
 
-print("Connection status:", connection.status())
+print("Status:", connection.status())
 
 if connection.is_connected():
-    response = connection.query(obd.commands.SPEED, force=True)
-
-    if not response.is_null():
-        print("Vehicle speed:", response.value)
-        print("Speed in mph:", response.value.to("mph"))
-    else:
-        print("No speed data received.")
-
+    print("Vehicle speed:", connection.query(obd.commands.SPEED))
     connection.close()
 else:
-    print("Connection failed. Check the adapter, ignition, and COM port.")
+    print("Could not connect. Check the adapter and vehicle.")
