@@ -1,17 +1,9 @@
-Matrics,Unique Id,Last Visit,Alert
-Engine Temperature,OBD-0001,2026-10-01,No
-Battery Voltage,OBD-0002,2026-10-02,No
-Engine RPM,OBD-0003,2026-10-03,No
-Vehicle Speed,OBD-0004,2026-10-03,No
-Fuel Level,OBD-0005,2026-10-04,No
-Coolant Temperature,OBD-0006,2026-10-05,No
-Oil Pressure,OBD-0007,2026-10-05,No
-Engine Load,OBD-0008,2026-10-06,No
-Intake Air Temperature,OBD-0009,2026-10-06,No
-Throttle Position,OBD-0010,2026-10-07,No
-Diagnostic Trouble Codes,OBD-0011,2026-10-07,No
-Battery Voltage,OBD-0012,2026-10-08,No
-Engine Temperature,OBD-0013,2026-10-08,No
-Fuel Level,OBD-0014,2026-10-09,No
-Vehicle Speed,OBD-0015,2026-10-09,No
-
+vehicle_id,registration_number,make,model,device_id,serial_number,connection_status,last_seen_at,scan_id,scanned_at,scan_status,code,description,statuses,fault_last_seen_at,priority,priority_reason,visited_at,reason,report,title,status,completed_at,summary,source,updated_at
+VEH-001,FR-AB-123-CD,Peugeot,208,DEV-001,ELM327-1001,connected,2026-10-10T08:45:00Z,SCAN-001,2026-10-10T08:45:00Z,completed,P0420,Catalyst system efficiency below threshold,active,2026-10-10T08:45:00Z,medium,Active catalyst efficiency fault requires inspection,2026-09-20,Engine warning light,Diagnostic scan recommended catalyst inspection,Inspect catalytic converter,pending,,Active catalyst efficiency fault; inspection recommended,OBD_SCAN,2026-10-10T08:50:00Z
+VEH-002,FR-EF-456-GH,Renault,Clio,DEV-002,ELM327-1002,disconnected,2026-10-09T16:20:00Z,SCAN-002,2026-10-09T16:20:00Z,completed,P0171,System too lean bank 1,active,2026-10-09T16:20:00Z,medium,Active lean mixture fault requires diagnosis,2026-09-15,Loss of power,Lean mixture fault recorded for further investigation,Inspect intake system,pending,,Lean mixture fault detected; further diagnosis required,OBD_SCAN,2026-10-09T16:25:00Z
+VEH-003,FR-IJ-789-KL,Citroen,C3,DEV-003,ELM327-1003,connected,2026-10-10T09:10:00Z,SCAN-003,2026-10-10T09:10:00Z,completed,P0301,Cylinder 1 misfire detected,active,2026-10-10T09:10:00Z,high,Active cylinder misfire may damage the catalytic converter,2026-10-01,Engine vibration,Possible cylinder misfire requires follow-up,Diagnose cylinder 1 misfire,in_progress,,Engine misfire detected; high-priority inspection recommended,OBD_SCAN,2026-10-10T09:15:00Z
+VEH-004,FR-MN-234-OP,Volkswagen,Golf,DEV-004,ELM327-1004,connected,2026-10-10T09:15:00Z,SCAN-004,2026-10-10T09:15:00Z,completed,P0455,EVAP system large leak detected,pending,2026-10-10T09:15:00Z,low,Pending evaporative emission system fault,2026-08-25,Emissions warning,EVAP leak inspection recommended,Inspect EVAP hoses,pending,,Pending EVAP leak code; inspect emission control system,OBD_SCAN,2026-10-10T09:20:00Z
+VEH-005,FR-QR-567-ST,Toyota,Yaris,DEV-005,ELM327-1005,disconnected,2026-10-08T14:30:00Z,SCAN-005,2026-10-08T14:30:00Z,completed,P0133,Oxygen sensor slow response,cleared,2026-10-08T14:30:00Z,low,Previous oxygen sensor fault marked cleared,2026-09-12,Engine warning light,Oxygen sensor fault previously cleared,Verify oxygen sensor operation,completed,2026-09-15T11:30:00Z,Previous oxygen sensor fault is cleared; monitor vehicle,OBD_SCAN,2026-10-08T14:35:00Z
+VEH-006,FR-UV-890-WX,BMW,Series 1,DEV-006,ELM327-1006,connected,2026-10-10T10:00:00Z,SCAN-006,2026-10-10T10:00:00Z,completed,P0562,System voltage low,active,2026-10-10T10:00:00Z,high,Low system voltage may cause starting problems,2026-10-05,Starting problem,Battery and charging system inspection recommended,Test battery and alternator,in_progress,,Low system voltage fault; check battery and charging system,OBD_SCAN,2026-10-10T10:05:00Z
+VEH-007,FR-YZ-135-AB,Dacia,Sandero,DEV-007,ELM327-1007,error,2026-10-10T07:50:00Z,SCAN-007,2026-10-10T07:50:00Z,failed,,,,medium,Diagnostic scan failed and needs to be repeated,2026-09-30,General maintenance,Repeat diagnostic scan at next visit,Repeat OBD diagnostic scan,pending,,Diagnostic unavailable; reconnect device and retry,DEVICE_STATUS,2026-10-10T07:55:00Z
+VEH-008,FR-CD-246-EF,Ford,Focus,DEV-008,ELM327-1008,connected,2026-10-10T10:15:00Z,SCAN-008,2026-10-10T10:15:00Z,completed,P0401,Exhaust gas recirculation flow insufficient,active,2026-10-10T10:15:00Z,medium,Active EGR flow fault requires inspection,2026-09-18,Emissions warning,EGR system inspection recommended,Inspect EGR valve,pending,,Active EGR flow fault; inspection recommended,OBD_SCAN,2026-10-10T10:20:00Z
