@@ -1,15 +1,16 @@
+
 import obd
 
-# Connect to an OBD-II adapter
-connection = obd.OBD()
+# Use a specific adapter port, e.g. COM3.
+# Change COM3 to your adapter's actual port.
+connection = obd.OBD(portstr="COM3", fast=False, timeout=2)
 
 print("Connection status:", connection.status())
 
 if connection.is_connected():
-    cmd = obd.commands.SPEED
-    response = connection.query(cmd)
+    response = connection.query(obd.commands.SPEED, force=True)
 
-    if response.value is not None:
+    if not response.is_null():
         print("Vehicle speed:", response.value)
         print("Speed in mph:", response.value.to("mph"))
     else:
@@ -17,4 +18,4 @@ if connection.is_connected():
 
     connection.close()
 else:
-    print("No vehicle connection. Check your OBD-II adapter.")
+    print("Connection failed. Check the adapter, ignition, and COM port.")
