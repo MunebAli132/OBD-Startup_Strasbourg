@@ -1,5 +1,0 @@
-﻿customer_id,garage_id,display_name,email,phone,created_at
-C001,G001,Demo Customer A,customer.a@example.test,,2026-09-02
-C002,G001,Demo Customer B,customer.b@example.test,,2026-09-10
-C003,G002,Demo Customer C,customer.c@example.test,,2026-09-12
-C004,G002,Demo Customer D,customer.d@example.test,,2026-09-20
