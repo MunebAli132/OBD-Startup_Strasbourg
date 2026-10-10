@@ -1,0 +1,7 @@
+﻿report_code_id,report_id,code,finding_status,observations
+RC001,R001,P0301,unverified,Intermittent rough idle reported; technician checks not yet documented.
+RC002,R002,P0171,unverified,Demo code entry; inspect intake and fuel-trim data as appropriate.
+RC003,R003,P0101,unverified,Stored code in demo record; verify sensor readings and vehicle service information.
+RC004,R004,P0128,unverified,Demo entry only; confirm engine-specific procedure and temperature readings.
+RC005,R005,P0420,unverified,No component failure confirmed; further diagnostic testing required.
+RC006,R005,P0455,unverified,Separate generic code in demo dataset; verify before drawing conclusions.

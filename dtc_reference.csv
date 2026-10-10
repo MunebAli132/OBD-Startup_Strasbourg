@@ -1,0 +1,7 @@
+﻿code,description,system,source_name,source_url,notes
+P0101,Mass or Volume Air Flow Circuit Range/Performance Problem,powertrain,SAE/OBD-II generic code description,,Generic definition; confirm vehicle-specific diagnostic procedure.
+P0128,Coolant Thermostat (Coolant Temperature Below Thermostat Regulating Temperature),powertrain,SAE/OBD-II generic code description,,Generic definition; code alone does not identify a failed component.
+P0171,System Too Lean (Bank 1),powertrain,SAE/OBD-II generic code description,,Generic definition; verify with service information and live data.
+P0301,Cylinder 1 Misfire Detected,powertrain,SAE/OBD-II generic code description,,Generic definition; does not by itself confirm the cause of the misfire.
+P0420,Catalyst System Efficiency Below Threshold (Bank 1),powertrain,SAE/OBD-II generic code description,,Generic definition; further testing is needed before replacing parts.
+P0455,Evaporative Emission System Leak Detected (Gross Leak/No Flow),powertrain,SAE/OBD-II generic code description,,Generic definition; verify vehicle-specific terminology and test procedure.
