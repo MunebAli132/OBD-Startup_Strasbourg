@@ -1,6 +1,0 @@
-﻿report_id,garage_id,vehicle_id,report_number,inspection_date,mileage_km,status,technician_notes,data_source
-R001,G001,V001,G001-2026-0001,2026-09-15,84200,final,Customer reports intermittent rough idle. Further checks required.,manual_demo_entry
-R002,G001,V002,G001-2026-0002,2026-09-22,61350,draft,Warning light reported by customer. No repair conclusion recorded.,manual_demo_entry
-R003,G002,V003,G002-2026-0001,2026-09-25,126400,final,Code stored in demo scan record. Verify using approved service procedure.,manual_demo_entry
-R004,G002,V004,G002-2026-0002,2026-10-02,39800,draft,Demo record; hybrid-system diagnosis is not represented by generic powertrain code alone.,manual_demo_entry
-R005,G001,V005,G001-2026-0003,2026-10-05,143700,final,Possible emissions-related issue. Do not infer failed parts from code only.,manual_demo_entry
