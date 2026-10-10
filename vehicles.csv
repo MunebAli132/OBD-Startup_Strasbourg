@@ -1,6 +1,0 @@
-﻿vehicle_id,garage_id,customer_id,make,model,year,fuel_type,mileage_km,vin,registration_number
-V001,G001,C001,Renault,Clio,2018,petrol,84200,,
-V002,G001,C002,Peugeot,208,2020,petrol,61350,,
-V003,G002,C003,Volkswagen,Golf,2017,diesel,126400,,
-V004,G002,C004,Toyota,Yaris,2021,hybrid,39800,,
-V005,G001,C001,Ford,Focus,2016,petrol,143700,,
