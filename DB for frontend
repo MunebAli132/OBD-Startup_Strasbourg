@@ -1,12 +1,7 @@
-I need :
+Hi, to move forward with the Streamlit dashboard, I need:
 
-| Donnée | Champs proposés | Utilité |
-|---|---|---|
-| Véhicule | `vehicle_id`, `registration_number`, `make`, `model` | Identifier la voiture |
-| Boîtier | `device_id`, `serial_number`, `connection_status`, `last_seen_at` | Identifier le boîtier associé et sa connexion |
-| Diagnostic | `scan_id`, `scanned_at`, `scan_status` | Savoir quand et avec quel résultat la lecture a eu lieu |
-| Défauts OBD | `code`, `description`, `statuses`, `last_seen_at` | Afficher les défauts détectés |
-| Priorité | `priority`, `priority_reason` | Expliquer l’ordre de traitement |
-| Dernière visite | `visited_at`, `reason`, `report` | Afficher le dernier passage au garage |
-| Interventions | `title`, `status`, `completed_at` | Distinguer les travaux réalisés de ceux restant à faire |
-| Résumé | `summary`, `source`, `updated_at` | Présenter une synthèse traçable | 
+- To know whether we’re using an API or a JSON file for the mock data.
+- A sample with: vehicle registration number, device serial number, OBD codes, last visit, and a summary of the repairs needed.
+- If you’re building an API, its URL and instructions for running it.
+
+Can you prepare this for me?
