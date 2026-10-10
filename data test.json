@@ -1,0 +1,391 @@
+
+{
+  "vehicles": [
+    {
+      "vehicle_id": "VEH-001",
+      "registration_number": "FR-AB-123-CD",
+      "make": "Peugeot",
+      "model": "208",
+      "device": {
+        "device_id": "DEV-001",
+        "serial_number": "ELM327-1001",
+        "connection_status": "connected",
+        "last_seen_at": "2026-10-10T08:45:00Z"
+      },
+      "diagnostic": {
+        "scan_id": "SCAN-001",
+        "scanned_at": "2026-10-10T08:45:00Z",
+        "scan_status": "completed"
+      },
+      "obd_codes": [
+        {
+          "code": "P0420",
+          "description": "Catalyst system efficiency below threshold",
+          "status": "active",
+          "last_seen_at": "2026-10-10T08:45:00Z"
+        }
+      ],
+      "priority": {
+        "level": "medium",
+        "reason": "Active catalyst-efficiency fault requires inspection"
+      },
+      "last_visit": {
+        "visited_at": "2026-09-20",
+        "reason": "Engine warning light",
+        "report": "Diagnostic scan recommended catalyst inspection"
+      },
+      "repairs": [
+        {
+          "title": "Inspect catalytic converter",
+          "status": "pending",
+          "completed_at": null
+        },
+        {
+          "title": "Check exhaust system for leaks",
+          "status": "pending",
+          "completed_at": null
+        }
+      ],
+      "summary": {
+        "text": "An active catalyst-efficiency fault was recorded. Inspect the exhaust system and confirm the cause before replacing components.",
+        "source": "MOCK_DATA",
+        "updated_at": "2026-10-10T08:50:00Z"
+      }
+    },
+    {
+      "vehicle_id": "VEH-002",
+      "registration_number": "FR-EF-456-GH",
+      "make": "Renault",
+      "model": "Clio",
+      "device": {
+        "device_id": "DEV-002",
+        "serial_number": "ELM327-1002",
+        "connection_status": "disconnected",
+        "last_seen_at": "2026-10-09T16:20:00Z"
+      },
+      "diagnostic": {
+        "scan_id": "SCAN-002",
+        "scanned_at": "2026-10-09T16:20:00Z",
+        "scan_status": "completed"
+      },
+      "obd_codes": [
+        {
+          "code": "P0171",
+          "description": "System too lean bank 1",
+          "status": "active",
+          "last_seen_at": "2026-10-09T16:20:00Z"
+        }
+      ],
+      "priority": {
+        "level": "medium",
+        "reason": "Active lean-mixture fault requires further diagnosis"
+      },
+      "last_visit": {
+        "visited_at": "2026-09-15",
+        "reason": "Loss of power",
+        "report": "Lean-mixture fault recorded for further investigation"
+      },
+      "repairs": [
+        {
+          "title": "Inspect intake system for leaks",
+          "status": "pending",
+          "completed_at": null
+        },
+        {
+          "title": "Check fuel-trim readings",
+          "status": "pending",
+          "completed_at": null
+        }
+      ],
+      "summary": {
+        "text": "A lean-mixture fault was recorded. Check for intake leaks and investigate the fuel system before determining the repair.",
+        "source": "MOCK_DATA",
+        "updated_at": "2026-10-09T16:25:00Z"
+      }
+    },
+    {
+      "vehicle_id": "VEH-003",
+      "registration_number": "FR-IJ-789-KL",
+      "make": "Citroen",
+      "model": "C3",
+      "device": {
+        "device_id": "DEV-003",
+        "serial_number": "ELM327-1003",
+        "connection_status": "connected",
+        "last_seen_at": "2026-10-10T09:10:00Z"
+      },
+      "diagnostic": {
+        "scan_id": "SCAN-003",
+        "scanned_at": "2026-10-10T09:10:00Z",
+        "scan_status": "completed"
+      },
+      "obd_codes": [
+        {
+          "code": "P0301",
+          "description": "Cylinder 1 misfire detected",
+          "status": "active",
+          "last_seen_at": "2026-10-10T09:10:00Z"
+        }
+      ],
+      "priority": {
+        "level": "high",
+        "reason": "An active misfire may damage the catalytic converter"
+      },
+      "last_visit": {
+        "visited_at": "2026-10-01",
+        "reason": "Engine vibration",
+        "report": "Possible cylinder misfire requires follow-up"
+      },
+      "repairs": [
+        {
+          "title": "Diagnose cylinder 1 misfire",
+          "status": "in_progress",
+          "completed_at": null
+        },
+        {
+          "title": "Inspect spark plug and ignition coil",
+          "status": "pending",
+          "completed_at": null
+        }
+      ],
+      "summary": {
+        "text": "An active cylinder 1 misfire was recorded. Investigate the ignition and fuel systems promptly to identify the cause.",
+        "source": "MOCK_DATA",
+        "updated_at": "2026-10-10T09:15:00Z"
+      }
+    },
+    {
+      "vehicle_id": "VEH-004",
+      "registration_number": "FR-MN-234-OP",
+      "make": "Volkswagen",
+      "model": "Golf",
+      "device": {
+        "device_id": "DEV-004",
+        "serial_number": "ELM327-1004",
+        "connection_status": "connected",
+        "last_seen_at": "2026-10-10T09:15:00Z"
+      },
+      "diagnostic": {
+        "scan_id": "SCAN-004",
+        "scanned_at": "2026-10-10T09:15:00Z",
+        "scan_status": "completed"
+      },
+      "obd_codes": [
+        {
+          "code": "P0455",
+          "description": "EVAP system large leak detected",
+          "status": "pending",
+          "last_seen_at": "2026-10-10T09:15:00Z"
+        }
+      ],
+      "priority": {
+        "level": "low",
+        "reason": "Pending evaporative-emissions fault requires confirmation"
+      },
+      "last_visit": {
+        "visited_at": "2026-08-25",
+        "reason": "Emissions warning",
+        "report": "EVAP leak inspection recommended"
+      },
+      "repairs": [
+        {
+          "title": "Inspect fuel cap and EVAP hoses",
+          "status": "pending",
+          "completed_at": null
+        }
+      ],
+      "summary": {
+        "text": "A pending EVAP leak code was recorded. Inspect the fuel cap, hoses and emission-control system to confirm the fault.",
+        "source": "MOCK_DATA",
+        "updated_at": "2026-10-10T09:20:00Z"
+      }
+    },
+    {
+      "vehicle_id": "VEH-005",
+      "registration_number": "FR-QR-567-ST",
+      "make": "Toyota",
+      "model": "Yaris",
+      "device": {
+        "device_id": "DEV-005",
+        "serial_number": "ELM327-1005",
+        "connection_status": "disconnected",
+        "last_seen_at": "2026-10-08T14:30:00Z"
+      },
+      "diagnostic": {
+        "scan_id": "SCAN-005",
+        "scanned_at": "2026-10-08T14:30:00Z",
+        "scan_status": "completed"
+      },
+      "obd_codes": [
+        {
+          "code": "P0133",
+          "description": "Oxygen sensor slow response",
+          "status": "cleared",
+          "last_seen_at": "2026-10-08T14:30:00Z"
+        }
+      ],
+      "priority": {
+        "level": "low",
+        "reason": "Previous oxygen-sensor fault is marked cleared"
+      },
+      "last_visit": {
+        "visited_at": "2026-09-12",
+        "reason": "Engine warning light",
+        "report": "Oxygen-sensor fault previously cleared"
+      },
+      "repairs": [
+        {
+          "title": "Verify oxygen sensor operation",
+          "status": "completed",
+          "completed_at": "2026-09-15T11:30:00Z"
+        }
+      ],
+      "summary": {
+        "text": "The previous oxygen-sensor fault is marked cleared. Monitor for recurrence and verify sensor operation if the warning returns.",
+        "source": "MOCK_DATA",
+        "updated_at": "2026-10-08T14:35:00Z"
+      }
+    },
+    {
+      "vehicle_id": "VEH-006",
+      "registration_number": "FR-UV-890-WX",
+      "make": "BMW",
+      "model": "Series 1",
+      "device": {
+        "device_id": "DEV-006",
+        "serial_number": "ELM327-1006",
+        "connection_status": "connected",
+        "last_seen_at": "2026-10-10T10:00:00Z"
+      },
+      "diagnostic": {
+        "scan_id": "SCAN-006",
+        "scanned_at": "2026-10-10T10:00:00Z",
+        "scan_status": "completed"
+      },
+      "obd_codes": [
+        {
+          "code": "P0562",
+          "description": "System voltage low",
+          "status": "active",
+          "last_seen_at": "2026-10-10T10:00:00Z"
+        }
+      ],
+      "priority": {
+        "level": "high",
+        "reason": "Low system voltage may cause starting or electrical problems"
+      },
+      "last_visit": {
+        "visited_at": "2026-10-05",
+        "reason": "Starting problem",
+        "report": "Battery and charging-system inspection recommended"
+      },
+      "repairs": [
+        {
+          "title": "Test battery condition",
+          "status": "in_progress",
+          "completed_at": null
+        },
+        {
+          "title": "Check alternator charging voltage",
+          "status": "pending",
+          "completed_at": null
+        }
+      ],
+      "summary": {
+        "text": "A low-system-voltage fault was recorded. Test the battery and charging system to identify the cause.",
+        "source": "MOCK_DATA",
+        "updated_at": "2026-10-10T10:05:00Z"
+      }
+    },
+    {
+      "vehicle_id": "VEH-007",
+      "registration_number": "FR-YZ-135-AB",
+      "make": "Dacia",
+      "model": "Sandero",
+      "device": {
+        "device_id": "DEV-007",
+        "serial_number": "ELM327-1007",
+        "connection_status": "error",
+        "last_seen_at": "2026-10-10T07:50:00Z"
+      },
+      "diagnostic": {
+        "scan_id": "SCAN-007",
+        "scanned_at": "2026-10-10T07:50:00Z",
+        "scan_status": "failed"
+      },
+      "obd_codes": [],
+      "priority": {
+        "level": "medium",
+        "reason": "Diagnostic scan failed and needs to be repeated"
+      },
+      "last_visit": {
+        "visited_at": "2026-09-30",
+        "reason": "General maintenance",
+        "report": "Repeat diagnostic scan at next visit"
+      },
+      "repairs": [
+        {
+          "title": "Check device connection",
+          "status": "pending",
+          "completed_at": null
+        },
+        {
+          "title": "Repeat OBD diagnostic scan",
+          "status": "pending",
+          "completed_at": null
+        }
+      ],
+      "summary": {
+        "text": "No diagnostic codes are available because the scan failed. Check the device connection and repeat the scan.",
+        "source": "DEVICE_STATUS",
+        "updated_at": "2026-10-10T07:55:00Z"
+      }
+    },
+    {
+      "vehicle_id": "VEH-008",
+      "registration_number": "FR-CD-246-EF",
+      "make": "Ford",
+      "model": "Focus",
+      "device": {
+        "device_id": "DEV-008",
+        "serial_number": "ELM327-1008",
+        "connection_status": "connected",
+        "last_seen_at": "2026-10-10T10:15:00Z"
+      },
+      "diagnostic": {
+        "scan_id": "SCAN-008",
+        "scanned_at": "2026-10-10T10:15:00Z",
+        "scan_status": "completed"
+      },
+      "obd_codes": [
+        {
+          "code": "P0401",
+          "description": "Exhaust gas recirculation flow insufficient",
+          "status": "active",
+          "last_seen_at": "2026-10-10T10:15:00Z"
+        }
+      ],
+      "priority": {
+        "level": "medium",
+        "reason": "Active EGR flow fault requires inspection"
+      },
+      "last_visit": {
+        "visited_at": "2026-09-18",
+        "reason": "Emissions warning",
+        "report": "EGR system inspection recommended"
+      },
+      "repairs": [
+        {
+          "title": "Inspect EGR valve and passages",
+          "status": "pending",
+          "completed_at": null
+        }
+      ],
+      "summary": {
+        "text": "An active EGR flow fault was recorded. Inspect the EGR valve and passages and confirm the cause before replacing parts.",
+        "source": "MOCK_DATA",
+        "updated_at": "2026-10-10T10:20:00Z"
+      }
+    }
+  ]
+}

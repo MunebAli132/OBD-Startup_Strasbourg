@@ -1,109 +1,102 @@
 
-from datetime import datetime, timezone
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
 
-app = FastAPI(
-    title="OBD SmartCare API",
-    description="JSON API for vehicle diagnostics and garage management",
-    version="1.0.0"
-)
+app = FastAPI(title="OBD SmartCare Mock API")
 
-# In-memory storage for the MVP
-vehicles = {}
-
-
-class Vehicle(BaseModel):
-    vehicle_id: str
-    registration_number: str
-    make: str
-    model: str
-
-
-class Reading(BaseModel):
-    vehicle_id: str
-    rpm: int = Field(ge=0, le=12000)
-    speed_kmh: float = Field(ge=0, le=400)
-    engine_temp_c: float
-    battery_voltage: float
-    codes: list[str] = []
+vehicles = [
+    {
+        "vehicle_id": "VEH-001",
+        "registration_number": "FR-AB-123-CD",
+        "make": "Peugeot",
+        "model": "208",
+        "device": {
+            "serial_number": "ELM327-1001",
+            "connection_status": "connected"
+        },
+        "obd_codes": [
+            {
+                "code": "P0420",
+                "description": "Catalyst system efficiency below threshold",
+                "status": "active"
+            }
+        ],
+        "last_visit": {
+            "date": "2026-09-20",
+            "reason": "Engine warning light",
+            "report": "Catalyst inspection recommended"
+        },
+        "repairs": [
+            {
+                "title": "Inspect catalytic converter",
+                "status": "pending",
+                "priority": "medium"
+            }
+        ],
+        "summary": (
+            "Inspect the exhaust system and verify the cause "
+            "of the catalyst-efficiency fault."
+        ),
+        "source": "MOCK_DATA",
+        "updated_at": "2026-10-10T08:50:00Z"
+    },
+    {
+        "vehicle_id": "VEH-002",
+        "registration_number": "FR-EF-456-GH",
+        "make": "Renault",
+        "model": "Clio",
+        "device": {
+            "serial_number": "ELM327-1002",
+            "connection_status": "disconnected"
+        },
+        "obd_codes": [
+            {
+                "code": "P0171",
+                "description": "System too lean bank 1",
+                "status": "active"
+            }
+        ],
+        "last_visit": {
+            "date": "2026-09-15",
+            "reason": "Loss of power",
+            "report": "Lean mixture fault recorded"
+        },
+        "repairs": [
+            {
+                "title": "Inspect intake system",
+                "status": "pending",
+                "priority": "medium"
+            }
+        ],
+        "summary": (
+            "Investigate the lean mixture fault and check for "
+            "intake leaks before deciding on repairs."
+        ),
+        "source": "MOCK_DATA",
+        "updated_at": "2026-10-10T09:00:00Z"
+    }
+]
 
 
 @app.get("/")
 def home():
     return {
-        "name": "OBD SmartCare API",
-        "status": "online",
-        "format": "JSON"
-    }
-
-
-@app.post("/api/vehicles")
-def create_vehicle(vehicle: Vehicle):
-    if vehicle.vehicle_id in vehicles:
-        raise HTTPException(409, "Vehicle already exists")
-
-    vehicles[vehicle.vehicle_id] = {
-        **vehicle.model_dump(),
-        "created_at": datetime.now(timezone.utc).isoformat(),
-        "latest_reading": None,
-        "history": []
-    }
-
-    return {
-        "message": "Vehicle created",
-        "vehicle": vehicles[vehicle.vehicle_id]
+        "service": "OBD SmartCare Mock API",
+        "status": "online"
     }
 
 
 @app.get("/api/vehicles")
 def list_vehicles():
-    return list(vehicles.values())
+    return vehicles
 
 
 @app.get("/api/vehicles/{vehicle_id}")
 def get_vehicle(vehicle_id: str):
-    vehicle = vehicles.get(vehicle_id)
-    if not vehicle:
-        raise HTTPException(404, "Vehicle not found")
-    return vehicle
+    for vehicle in vehicles:
+        if vehicle["vehicle_id"] == vehicle_id:
+            return vehicle
 
-
-@app.post("/api/readings")
-def post_reading(reading: Reading):
-    vehicle = vehicles.get(reading.vehicle_id)
-    if not vehicle:
-        raise HTTPException(404, "Register the vehicle first")
-
-    data = reading.model_dump()
-    data["recorded_at"] = datetime.now(timezone.utc).isoformat()
-    data["alert"] = (
-        reading.engine_temp_c >= 110
-        or reading.battery_voltage < 11.8
+    raise HTTPException(
+        status_code=404,
+        detail="Vehicle not found"
     )
-
-    vehicle["latest_reading"] = data
-    vehicle["history"].append(data)
-
-    return {
-        "message": "Reading received",
-        "reading": data
-    }
-
-
-@app.get("/api/vehicles/{vehicle_id}/readings")
-def get_readings(vehicle_id: str):
-    vehicle = vehicles.get(vehicle_id)
-    if not vehicle:
-        raise HTTPException(404, "Vehicle not found")
-    return vehicle["history"]
-
-
-@app.get("/api/vehicles/{vehicle_id}/latest")
-def get_latest_reading(vehicle_id: str):
-    vehicle = vehicles.get(vehicle_id)
-    if not vehicle:
-        raise HTTPException(404, "Vehicle not found")
-    if vehicle["latest_reading"] is None:
-        raise HTTPException(404, "No readings available")
-    return vehicle["latest_reading"]
